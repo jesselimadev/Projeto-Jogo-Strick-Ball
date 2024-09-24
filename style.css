@@ -483,7 +483,7 @@ body.nivel-intro {
 }
 
 .empty-tube { left: 4.3%; top: 20rem; }
-.empty-tube1 { left: 15%; top: 20.2rem; display:none; }
+.empty-tube1 { left: 15%; top: 20.2rem;}
 .tube3 { left: 35.5%; }
 .tube0 { left: 5%; box-shadow:    none; /* Adiciona brilho */}
 .tube1 { left: 15%; box-shadow:   none; /* Adiciona brilho */}
