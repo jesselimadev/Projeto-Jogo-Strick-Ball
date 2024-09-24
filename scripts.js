@@ -430,7 +430,7 @@ emptyTubes.forEach(emptyTube => {
 let nivelAtual = 1;
 
 // Defina como verdadeiro para usar a lógica atual ou falso para a nova lógica
-const useCurrentLogic = true;
+const useCurrentLogic = false;
 
 if (useCurrentLogic) {
     // Lógica atual com 4 tubos
