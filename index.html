@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strick-Ball</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/8e4a8a2fdd.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="lazy-bg"></div>
+    <div class="indicacao-container">
+        <div class="lazy-bg"></div>
+        <div class="indicacao"></div>
+        <div class="mensagem" id="mensagem1">Clique para Selecionar a Bola</div>
+        <div class="mensagem" id="mensagem2">Clique para Mover a Bola</div>
+        <div class="mensagem" id="mensagem3">Clique para Mover a Bola</div>
+    </div>
+
+    <div id="navbar" class="navbar">
+        <a href="#" onclick="homeAction()" class="Home"><i class="fa fa-home"></i></a>
+        <a href="#" onclick="resetarNivel()" class="Reset"><i class="fa fa-refresh"></i></a>
+        <a href="#" onclick="voltarJogadas()" class="Return"><i class="fa-solid fa-arrow-rotate-left"></i> 3</a>
+        <a href="#" onclick="adicionarTubo()" class="AddTubo"><i class="fa-solid fa-vial"></i>+2</a>
+    </div>
+
+    <div class="container-Home">
+        <div class="template-da-Home">
+            <div class="lazy-bg"></div>
+            <div id="nivel-atual">
+                Nível: 1
+            </div>
+            <button onclick="configuracoes()" class="botao-de-configuracoes-da-secao-Home">
+                <i class="fa-solid fa-gear fa-spin fa-spin-reverse"></i>
+                <button onclick="temasDoJogo()" class="botaoAbrirTemasSecH"><i
+                        class="fa-solid fa-image fa-bounce"></i></button>
+            </button>
+            <div class="botaoRemoverAnuncio">
+                <button onclick="botaoRemoverAnuncio()" class="botaoRemoveAdSecH">
+                    <i class="fa-solid fa-rectangle-ad"></i>
+                </button>
+                <i class="fa-solid fa-slash barra"></i>
+            </div>
+            <div class="boton-Home">
+                <div class="circulo-Home"></div>
+                <div class="playButton-Home"></div>
+            </div>
+            <div class="template-configuracoes">
+                <div class="lazy-bg"></div>
+                <div class="textos-e-botoes-da-template">
+                    <h1>Configurações</h1>
+                    <div class="template-buttons">
+                        <button onclick="fechar()" class="fechar-configuracoes">
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </button>
+                        <button onclick="homeAction1()" class="template-button">
+                            <i class="fa-solid fa-envelope"></i><span>Entrar em contato</span>
+                        </button>
+                        <button onclick="homeAction2()" class="template-button">
+                            <i class="fa-solid fa-square-share-nodes fa-bounce"></i><span>Compartilhar</span>
+                        </button>
+                        <button onclick="homeAction3()" class="template-button">
+                            <i class="fa-solid fa-file-lines fa-flip-vertical"></i><span>Privacidade</span>
+                        </button>
+                        <button onclick="homeAction4()" class="template-button">
+                            <i class="fa-solid fa-file-lines fa-flip-vertical"></i><span>Termos de uso</span>
+                        </button>
+                    </div>
+                    <div class="icones-de-som2">
+                        <button class="button-som1 silenciar" onclick="muted()">
+                            <i class="fa-solid fa-volume-xmark"></i>
+                            <div class="button-text">Som</div>
+                        </button>
+                        <button onclick="noVibration()" class="button-som2 noVibration">
+                            <i class="fa-solid fa-bell-slash"></i>
+                            <div class="button-text">Vibração</div>
+                        </button>
+                        <div class="icones-de-som1">
+                            <button class="button-som1 estereo" onclick="stereo()">
+                                <i class="fa-solid fa-volume-high fa-beat"></i>
+                                <div class="button-text">Som</div>
+                            </button>
+                            <button onclick="vibration()" class="button-som2 vibration">
+                                <span class="shake-parentheses">((</span>
+                                <i class="fa-solid fa-bell fa-shake"></i>
+                                <span class="shake-parentheses">))</span>
+                                <div class="button-text">Vibração</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="capa-do-jogo">
+        <div class="lazy-bg"></div>
+        <div class="mascara"></div>
+        <div class="boton">
+            <div class="retangulo"></div>
+            <div class="playButton"></div>
+        </div>
+
+        <div id="jogo">
+            <div class="tubes">
+                <div class="containerTubo">
+                    <div id="confetesDosTubos"></div>
+                </div>
+                <div class="tube0"> <!-- Tubo para as bolinhas -->
+                    <div class="ball" data-color="red"> <!-- Bolinhas Vermelhas --></div>
+                    <div class="ball" data-color="blue"> <!-- Bolinhas Azuis --></div>
+                    <div class="ball" data-color="yellow"><!-- Bolinhas Amarelas --></div>
+                    <div class="ball" data-color="deeppink"><!-- Bolinhas Rosas --></div>
+                    <div class="ball-black0"><!-- Bolinhas Pretas --></div>
+                    <div class="ball-green0"><!-- Bolinhas Verdes --></div>
+                </div>
+
+                <div class="tube1"><!-- Tubo para as bolinhas -->
+                    <div class="ball" data-color="red"><!-- Bolinhas Vermelhas --> </div>
+                    <div class="ball" data-color="blue"><!-- Bolinhas Azuis --> </div>
+                    <div class="ball" data-color="yellow"><!-- Bolinhas Amarelas --></div>
+                    <div class="ball" data-color="deeppink"> <!-- Bolinhas Rosas --> </div>
+                    <div class="ball-black1"> <!-- Bolinhas Pretas --></div>
+                    <div class="ball-green1"> <!-- Bolinhas Verdes --></div>
+                </div>
+
+                <div class="tube2"> <!-- Tubo para as bolinhas -->
+                    <div class="ball" data-color="red"> <!-- Bolinhas Vermelhas --></div>
+                    <div class="ball" data-color="blue"><!-- Bolinhas Azuis --></div>
+                    <div class="ball" data-color="yellow"> <!-- Bolinhas Amarelas --></div>
+                    <div class="ball" data-color="deeppink"><!-- Bolinhas Rosas --> </div>
+                    <div class="ball-black2"> <!-- Bolinhas Pretas --></div>
+                    <div class="ball-green2"> <!-- Bolinhas Verdes --></div>
+                </div>
+
+                <div class="tube3"> <!-- Tubo para as bolinhas -->
+                    <div class="ball" data-color="red"> <!-- Bolinhas Vermelhas --></div>
+                    <div class="ball" data-color="blue"> <!-- Bolinhas Azuis --> </div>
+                    <div class="ball" data-color="yellow"> <!-- Bolinhas Amarelas --></div>
+                    <div class="ball" data-color="deeppink"><!-- Bolinhas Rosas --></div>
+                    <div class="ball-black3"> <!-- Bolinhas Pretas --> </div>
+                    <div class="ball-green3"><!-- Bolinhas Verdes --> </div>
+                </div>
+
+            </div>
+
+            <div class="empty-tubes">
+                <div class="empty-tube"><!-- Tubo Vazio --> </div>
+                <div class="empty-tube1"><!-- Tubo Vazio --></div>
+            </div>
+
+            <!-- <div class="tubespecial"> Tubo para as bolinhas 
+                <div class="ball" data-color="red" >Bolinhas Vermelhas</div>
+                <div class="ball" data-color="blue"> Bolinhas Azuis </div> 
+                <div class="ball" data-color="yellow"> Bolinhas Amarelas</div>  
+                <div class="ball" data-color="deeppink">  Bolinhas Rosas </div>
+                <div class="ball" data-color="green"> Bolinhas Verdes </div>
+                <div class="ball-black0">Bolinhas Pretas  </div>
+            </div>-->
+
+            <div id="nivel-atual">Nível: <span id="nivel-valor">1</span></div>
+            <div id="mensagem-vitoria" class="oculto">
+                <div class="container">
+                    <div class="conteudo">
+                        <h2>Parabéns! Você completou a tarefa!</h2>
+                    </div>
+                    <div id="confetes"></div>
+                    <button id="proximo-nivel">Próximo Nível</button>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <div>Ícones feitos por <a href="https://www.flaticon.com/br/autores/juicy-fish"
+                        title="juicy_fish">juicy_fish</a> from <a href="https://www.flaticon.com/br/"
+                        title="Flaticon">www.flaticon.com</a>
+                </div>
+            </footer>
+            
+            <!-- <div class="containerConfeteTubo">
+            <div id="confeteTuboCompleto"></div> -->
+        </div>
+        <script src="scripts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,944 @@
+.lazy-bg {
+    min-height: 200px; /* Ajuste conforme necessário */
+    background-color: #000; /* Cor de fundo padrão */
+    background-size: cover;
+    background-position: center;
+}
+
+
+body {
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+    position: relative;
+    background-color: #134c7a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);
+    filter: blur(0.1px);
+    overflow: hidden;
+}
+
+body.nivel-intro {
+    background-image: url(Assets/Temas-para-o-Jogo/tema1-peixe-palhaço.jpg);
+    background-size: cover;
+    height: 97.4vh;
+    background-position: center top 50%;
+    background-repeat: no-repeat;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    text-shadow: 0.8px 0.8px 0.8px rgba(0, 0, 0, 0.1);
+    filter: blur(0.1px);
+}
+
+#navbar {
+    display: flex;
+    width:65%;
+    overflow: auto;
+    /* display: flex; */
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px;
+    position: fixed; /* Para fixar a navbar na tela */
+    top: 0; /* Para posicionar a navbar na parte inferior */
+    background-color: transparent; /* Remove o background da navbar */
+ /* background-color: #555; */
+}
+
+.navbar a {
+    text-align: center;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+    background-color: #04AA6D;
+    border-style: groove;
+    border-width: 0.3rem;
+    border-color:rgb(1, 49, 9);
+}
+
+.navbar a:hover {
+    background-color: #000; /* Cor de fundo ao passar o mouse */
+}
+
+.Home{
+    position: fixed;
+    left: 1.8rem;
+}
+
+.Reset{
+    position: fixed;
+    left: 6.4rem;
+}
+
+.Return{
+    position: fixed;
+    left: 19.8rem;
+}
+
+.AddTubo{
+    position: relative;
+    right:0.6rem;
+}
+
+.boton-Home {
+    position: fixed;
+    left: 44.2rem;
+    bottom: 4rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Estilos para a nova interface ao clicar no botao Home */
+.template-da-Home {
+    background-image: url(Assets/imagens-template-da-home/template-1.webp);
+    background-size:42rem;
+    position: relative;
+    top: 0;
+    margin: -0.5rem;
+    height: 100vh;
+    overflow: hidden; /* Esconde o conteúdo extra */
+    display: none; /* Inicialmente escondido */
+}
+
+.botaoRemoverAnuncio {
+    position: absolute;
+    top: 75%; /* Ajuste conforme necessário */
+    left: 0px; /* Parte do botão fora da tela */
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: left 0.3s ease-out; /* Transição suave */
+    border-radius: 0 20px 20px 0; /* Bordas arredondadas para parecer uma aba */
+    border-style: solid;
+    border-color: #000000;
+    border-width: 0.2rem;
+    width:98px;
+    height: 70px;
+    /* background-color: #f3f047 ; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+  
+.botaoRemoverAnuncio:hover {
+    transition: left 0.3s ease-in; /* Transição suave */
+}
+  
+.botaoRemoveAdSecH {
+    position: absolute;
+    left:-0.6rem;
+    font-size: 55px;
+    background-color: #000000;
+    color: #f3f047 ;
+    width:110px;
+    border-radius: 0 20px 20px 0; /* Bordas arredondadas para parecer uma aba */
+    padding-top: 0.1rem;
+    border-color: rgb(246, 245, 248);
+    border-style: solid;
+    border-width: 0.2rem;
+}
+  
+.barra {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.7rem;
+    font-size: 61px;
+    color: #000000;
+    opacity: 0.8;
+}
+  
+.botaoAbrirTemasSecH{
+   position:absolute;
+   font-size: 50px;
+   top:15%;
+   background-color:  #000000;
+   color:#f3f047 ;
+   width:95px;
+   border-radius: 0 20px 20px 0; /* Bordas arredondadas para parecer uma aba */
+   border-style:solid;
+   border-color:rgb(250, 250, 250);
+   border-width:0.2rem;
+}
+
+.botao-de-configuracoes-da-secao-Home {
+    display: block;
+    position:fixed;
+    left:95.4%;
+    top:0.8rem;
+    padding: 0.3rem;
+    color: rgb(243, 247, 53); /* Cor do ícone */
+    font-size: 40px; /* Tamanho do ícone */
+    background-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-width: 0.2rem;
+    border-color: #ffffff;
+    cursor:pointer;
+    transition: ease-in 0.2s;
+}
+
+.botao-de-configuracoes-da-secao-Home:hover  {
+    color: #000000;
+    background-color: rgb(243, 247, 53);
+    border-color: rgb(2, 2, 2);
+    border-style: dashed;
+    border-width: 0.2rem;
+    font-size: 41.3px; /* Tamanho do ícone */
+    transition: ease-out 0.2s; 
+}
+
+/* Estilos para a nova interface ao clicar no botão de configurações*/
+.template-configuracoes {
+   background-image: url(Assets/imagens-template-da-home/template-configuracoes.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   position: relative;
+   margin: -0.5rem;
+   height: 101vh;
+   display: none; /* Inicialmente escondido */
+}
+
+.textos-e-botoes-da-template, h1{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color:white; 
+}
+
+.template-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    position: fixed;
+    top:16rem; 
+}
+
+.template-button {
+    background-color: #000000; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    border: none;
+    padding: 15px 32px;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 8px; /* Bordas arredondadas */
+    transition: background-color 0.1s ease;
+    box-shadow:    0 2px #1eff56;
+}
+
+.template-button:hover {
+    background-color: #ffffff; /* Cor de fundo ao passar o mouse */ 
+    color:black;
+    transition: background-color 0.1s ease;
+    box-shadow:    0 7px #0a0a0a;
+}
+
+.template-button i {
+        margin-right: 8px; /* Ajuste a distância conforme necessário */
+        position: fixed;
+        display: flex;
+        justify-content: flex-end;
+}
+    
+.template-button span {
+        font-weight: bold;
+        font-size: 1.2rem;
+}
+    
+.fechar-configuracoes {
+    display: block;
+    position:fixed;
+    left:94.9%;
+    top:0.3rem;
+    padding: 0rem;
+    color: rgb(12, 12, 12); /*Cor do ícone */
+    font-size: 60.3px; /* Tamanho do ícone */
+    border-radius: 49%;
+    background-color: #1eff56;
+    border-style: dotted;
+    border-width: 0.2rem;
+    border-color: #000000;
+    padding-top: -2rem;
+    padding-bottom: -2rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    cursor:pointer;
+}
+
+.fechar-configuracoes:hover {
+     color:#070707; /*Cor do ícone */
+    background-color:rgb(252, 243, 243); 
+    border-style: dotted;
+    border-width: 0.1rem;
+    border-color: #0f0f0f;
+}
+
+.icones-de-som1, .icones-de-som2 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    position: fixed;
+    gap: 20px;
+    top: 6rem;
+    visibility: visible;
+}
+
+.button-som1 {
+    position: absolute;
+    top: 0;
+    right: 0.5rem;
+    background-color: #000000; /* Cor de fundo do botão */
+    color: rgb(255, 255, 255); /* Cor do texto */
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 19px;
+    cursor: pointer;
+    border-radius: 12px; /* Bordas arredondadas */
+    padding: 30px 41px;
+    margin: 10px;
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color:#1eff56;
+}
+
+.button-som2{
+    position: absolute;
+    top: 0;
+    left: 0.5rem;
+    background-color: #080808; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 19px;
+    cursor: pointer;
+    border-radius: 12px; /* Bordas arredondadas */
+    padding: 30px 21.4px;
+    margin: 10px;
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color:#1eff56;
+}
+
+.button-som1:hover {
+    background-color:white; /* Cor de fundo do botão */
+    color:#080808; /* Cor do texto */
+    border-style: solid;
+    border-width: 0.2rem;
+    border-color:#0d0e0d;   
+}
+
+.button-som2:hover {
+    background-color:white; /* Cor de fundo do botão */
+    color:#080808; /* Cor do texto */
+    border-style: solid;
+    border-width: 0.2rem;
+    border-color:#0d0e0d;  
+}
+
+.silenciar{
+    background-color:#848682; /* Cor de fundo do botão */
+    color:#080808; /* Cor do texto */
+    opacity:0.8;
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color:#050505;  
+}
+
+.silenciar:hover {
+    background-color:#797a76; /* Cor de fundo do botão */
+    color:#080808; /* Cor do texto */
+    opacity:0.8; 
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color:#050505;
+}
+
+.noVibration {
+    background-color:#848682; /* Cor de fundo do botão */
+    color:#080808; /* Cor do texto */
+    opacity:0.8;
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color:#050505;  
+}
+
+.noVibration:hover {
+    background-color:#797a76; /* Cor de fundo do botão */
+    color:#080808; /* Cor do texto */
+    opacity:0.8; 
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color:#050505;
+}
+
+.button-text {
+    background-color: transparent;
+    font-weight: bold;
+    position: relative;
+    display: flex;
+    top: 10px;
+}
+
+.shake-parentheses {
+    display: inline-block;
+    animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.boton-Home {
+    position: absolute;
+    left: 38.3rem;
+}
+
+.circulo-Home {
+    position: fixed;
+    bottom: 14rem;
+    width: 7.6rem;
+    height: 7.6rem;
+    background-color: #000000;
+    transition: background-color 0.3s ease;
+    border-style: dashed;
+    border-color: #ffffff;
+    border-width: 0.3rem;
+    border-radius: 45%;  
+}
+
+.playButton-Home {
+    box-sizing: border-box;
+    position: fixed;
+    left: 40.6rem;
+    bottom: 15.7rem;
+    width: 0;
+    height: 74px;
+    border-color: transparent transparent transparent #fbff28;
+    transition: 100ms all ease;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 37px 0 37px 60px;
+}
+
+.boton-Home:hover .playButton-Home {
+    border-color: transparent transparent transparent #000000;
+}
+
+.boton-Home:hover .circulo-Home {
+    background-color: #fbff28;
+    border-style: dashed;
+    border-color: #0e0d0d;
+    border-width: 0.4rem;
+}
+
+#jogo {
+    display: none;
+}
+
+.tubes, .empty-tubes {
+    position: relative;
+    left: 2.2rem;
+    top: 7.3rem;
+}
+
+.tube0, .tube1, .tube2, .tube3, .empty-tube, .empty-tube1 { 
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 14rem;
+    width: 3.4rem;
+    background-color: #ccc;
+    border: 0.2rem solid #000;
+    position: absolute;
+    top: 3.2rem;
+    border-radius: 1.5rem;
+    border-top-right-radius: 7%;
+    border-top-left-radius: 7%;
+    opacity: 85%;
+    cursor: pointer;   
+}
+
+.empty-tube { left: 4.3%; top: 20rem; }
+.empty-tube1 { left: 15%; top: 20.2rem; display:none; }
+.tube3 { left: 35.5%; }
+.tube0 { left: 5%; box-shadow:    none; /* Adiciona brilho */}
+.tube1 { left: 15%; box-shadow:   none; /* Adiciona brilho */}
+.tube2 { left: 25.5%; box-shadow: none;  /* Adiciona brilho */}
+
+.tube0.complete { left: 5%; box-shadow:    0 13px rgb(4, 8, 255); opacity:100%;/* Adiciona brilho */}
+.tube1.complete { left: 15%; box-shadow:   0 0 13px rgb(255, 0, 0); opacity: 100%;/* Adiciona brilho */}
+.tube2.complete { left: 25.5%; box-shadow: 0 0 13px rgb(252, 249, 249); opacity: 100%;/* Adiciona brilho */}
+
+.tube0.complete::before{box-shadow: none;}
+.tube1::before{box-shadow: none;}
+.tube2::before{box-shadow: none;}
+
+.tube0.complete-blue::before {box-shadow: 0 0 13px rgba(24, 8, 248, 0.863); opacity: 100%;}
+.tube1.complete-red::before{box-shadow: 0 0 13px rgb(255, 0, 0);opacity: 100%;}
+.tube2.complete-white::before {box-shadow: 0 0 13px rgb(252, 249, 249);opacity: 100%;}
+
+.tube0::before, .tube1::before, .tube2::before, .tube3::before, .empty-tube::before, .empty-tube1::before {
+    content: "";
+    display: block;
+    width: 4.125rem;
+    height: 0.975rem;
+    background-color: #ccc;
+    border-radius: 50%;
+    border: 0.2rem solid #000;
+    position: absolute;
+    top: -1.06875rem;
+    opacity: 80%;
+}
+
+.ball[data-color=red], .ball[data-color=blue], .ball[data-color=yellow], .ball[data-color=deeppink]{
+    position: absolute;
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.ball.flutuando {
+    position: absolute;
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgb(252, 249, 249);
+    top: 75px;
+    left: 9%;
+    transform: translateX(-30%) translateY(-130px);
+    transition: transform 0.3s ease-out;
+    z-index: 1;
+}
+
+.ball[data-color=red] { background-color: red; bottom: 0.2rem; box-shadow: 0 0 100px rgb(255, 0, 0);opacity: 100%; /* Adiciona brilho */ }
+.ball[data-color=blue] { background-color: blue; bottom: 3.4rem;  box-shadow: 0 0 100px rgb(17, 119, 253);opacity: 100%;}
+.ball[data-color=yellow] { background-color: yellow; bottom: 6.7rem; }
+.ball[data-color=deeppink] { background-color: deeppink; bottom: 9.9755rem; opacity: 80%; }
+
+.unclickable {
+    pointer-events: none; /* Desativa os cliques */
+}
+
+.indicacao {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background: url('Assets/Icone-de-indicação/indicador.png') no-repeat;
+    background-size: contain;
+    animation: mover 1s infinite;
+    bottom: -96px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes mover {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+.indicacao-container {
+    position: absolute;
+    bottom: 13rem;
+    left: 28%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 
+        0.7rem 0.2rem 0.1rem #000,
+        0.5rem 0.2rem 0.2rem #000,
+        0.6rem 0.2rem 0.3rem #000,
+        0.8rem 0.2rem 0.4rem #000,
+        0.4rem 0.2rem 0.5rem #000,
+        0.9rem 0.2rem 0.6rem #000;
+}
+
+/* Classe para bloquear cliques */
+.blocked {
+    pointer-events: none;
+    opacity:0.7; /* Opcional: para indicar visualmente que está bloqueado */
+}
+
+.resetOpacity{
+    opacity: 100%;
+}
+
+.mensagem {
+    position: relative;
+    top: 7rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+#mensagem1 {
+    display: block;
+}
+
+#mensagem2, #mensagem3 {
+    position: relative;
+    display: none;
+}
+
+#mensagem2 {
+    right: 88%;
+}
+
+#mensagem3 {
+    right: 49%;
+}
+
+#mensagem-vitoria {
+    position: fixed;
+    top: -4.2rem;
+    left: 0;
+    width: 100vw;
+    height: 110vh;
+    margin-left: -6px;
+    margin-top:-8px;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(255, 255, 255);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9;
+}
+  
+#mensagem-vitoria.mostrar {
+    display: flex;
+    animation: fadeIn 0s ease-in;
+}
+  
+#mensagem-vitoria .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+#mensagem-vitoria .conteudo {
+    position: absolute;
+    top: 12%;
+    background: #06087c;
+    padding: 20px;
+    border-radius:none;
+    display: block;
+    margin-bottom: 20px;
+    border-style: double;
+    border-color: #2e0101;
+    border-width: 0.2rem;
+}
+  
+#mensagem-vitoria button {
+    margin-top: 20px;
+    opacity: 100%;
+    padding: 30px 20px 30px 20px;
+    border-radius: 30px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    /* border-radius: 0 0 50px 50px / 0 0 55% 55%; */
+     /* border-top-left-radius: 15%;
+     border-bottom-left-radius: 15%;
+     border-top-right-radius: 15%;
+     border-bottom-right-radius: 15%;
+     border-end-end-radius: 59%; */
+    /* border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%; */   
+}
+
+@keyframes fadeIn {
+    from { opacity: 1; }
+    to { opacity:0.5; }
+}
+
+#proximo-nivel {
+    position: fixed;
+    bottom:20%;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #1eff56;
+    color: rgb(12, 12, 12);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    border-style: dashed;
+    border-width: 0.3rem;
+    /* font-size: 5rem; */
+}
+
+#proximo-nivel:hover {
+    background: #0e063d;
+    color: rgb(160, 168, 206);
+    border-style: dotted;
+    border-color: #ffffff;
+    border-width: 0.3rem;   
+}
+
+#nivel-atual {
+    position: fixed;
+    top: 0.5rem;
+    left: 10.7rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    border-style: dotted;
+    border-width: 0.2rem;
+}
+
+/* Estilos para a posição na template de home */
+.template-da-Home #nivel-atual {
+    left: 38.2rem;
+    height: 4.9vh;
+    top:0rem;
+    padding: 1.5rem 1.5rem 0.5rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: rgb(220, 250, 50);
+    border-color: rgb(131, 212, 250);  
+}
+  
+#confetesDosTubos .containerTubo {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+  
+#confetesDosTubos {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.confeteTubo {
+    position: absolute;
+    width: 9px;
+    height: 6px;
+    left:7.5rem;
+    background-color: rgb(66, 202, 12); /* Cor variada no JavaScript */
+    border-radius: 50%; 
+    will-change: transform, opacity; /* Otimização de renderização */
+    /* animation: confete-rise 2s ease-out forwards; Animação de subida */
+}
+
+@keyframes confeteTubo-rise {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+    200% {
+        transform: translateY(100vh) translateX(50vw);
+        opacity: 0;
+    }
+}
+
+
+
+/* Função abaixo dos confetetes dos tubos completos modificar */
+/* #confeteTuboCompleto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.confeteTubo, .fitilho {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    animation: confeteTubo-rise 2s ease-out;
+}
+
+.fitilho {
+    width: 2px;
+    height: 50px;
+    background-color: gold;
+    animation: fitilho-rise 2s ease-out;
+}
+
+@keyframes confeteTubo-rise {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100vh); 
+    }
+}
+
+@keyframes fitilho-rise {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100vh); 
+    }
+} */
+/* Função acima dos confetetes dos tubos completos descomentar */
+
+/* Função abaixo animação original dos confetes após vitória descomentar */
+#confetes {
+    position: fixed;
+    top: 0rem;
+    left: 22%;
+    width: 60%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+     /* background-color: white; linha comentada */
+    /* opacity: 30%;  linha comentada */
+}
+  
+.confete {
+    position: absolute;
+    width: 9px;
+    height: 6px;
+    background-color: rgb(236, 53, 7)(225, 0, 255);
+    border-radius: 70%;
+    animation: confete-fall 0s ease-out;
+    will-change: transform, opacity; /*Adicionado para otimizar a renderização*/
+}
+  
+@keyframes confete-fall {
+    3% {
+      transform: translateY(0) translateX(0);
+      opacity: 70%;
+    }
+    25% {
+      transform: translateY(100vh) translateX(50vw);
+      opacity: 30%;
+    }
+}
+/* Função acima animação original dos confetes após vitória descomentar */
+  
+/* #confetes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.confete {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    opacity: 0;
+    animation: confete 2s ease-in-out infinite;
+}
+
+@keyframes confete {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+} */
+
+.mascara {
+    background-image: url(Assets/Img-Principal/img-de-inicio-do-jogo.jpeg);
+    background-size: 42.9rem;
+    position: relative;
+    top: 0;
+    margin: -0.5rem;
+    height: 100vh;
+}
+
+.boton {
+    position: fixed;
+    left: 39.6rem;
+    bottom: 4rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.retangulo {
+    position: fixed;
+    bottom: 15rem;
+    width: 7rem;
+    height: 7rem;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+    border-style: dashed;
+    border-color: #000;
+    border-width: 0.2rem;
+    border-radius: 50%;
+}
+
+.playButton {
+    box-sizing: border-box;
+    position: fixed;
+    left: 42rem;
+    bottom: 16.3rem;
+    width: 0;
+    height: 74px;
+    border-color: transparent transparent transparent #ee8e11;
+    transition: 100ms all ease;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 37px 0 37px 60px;
+}
+
+.boton:hover .playButton {
+    border-color: transparent transparent transparent #ffffff;
+}
+
+.boton:hover .retangulo {
+    background-color: #ee8e11;
+    border-style: dotted;
+    border-color: #ffffff;
+    border-width: 0.3rem;
+}
+
+.footer {
+    display: none;
+}
