@@ -1525,6 +1525,7 @@ if (useCurrentLogic) {
     atualizarNivel();
     atualizarNavbar();
     desbloquearTodosOsTubos();
+    tocarSomJogo();
 
     // Inicializa a navbar no estado correto
     atualizarNavbar();
