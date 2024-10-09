@@ -33,7 +33,7 @@ body.nivel-intro {
 }
 
 #navbar {
-    display: flex;
+    display: none;
     width:65%;
     overflow: auto;
     /* display: flex; */
