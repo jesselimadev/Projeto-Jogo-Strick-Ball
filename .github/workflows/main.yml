@@ -10,15 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3 # Atualize para a versão mais recente
+        uses: actions/checkout@v3
       - name: Setup Node.js
-        uses: actions/setup-node@v3 # Atualize para a versão mais recente
+        uses: actions/setup-node@v3
         with:
-          node-version: '20' # Use Node.js 20
-
-
+          node-version: '20'
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd /home/runner/work/Projeto-Jogo-Strick-Ball/Projeto-Jogo-Strick-Ball
+          npm install
 
       - name: Build project
         run: npm run build
