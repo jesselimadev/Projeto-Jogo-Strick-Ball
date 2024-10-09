@@ -261,7 +261,9 @@ function tocarSomFecharInterface() {
 function tocarSomTemplateButons() {
   if (somTemplateButons) {
     // Verifica se o objeto somTemplateButons está disponível
-    somTemplateButons.play() .then(() => { // Tenta reproduzir o som
+    somTemplateButons
+      .play() 
+      .then(() => { // Tenta reproduzir o som
         console.log('Som de Template Butons reproduzido com sucesso.'); // Loga o sucesso da reprodução
       })
       .catch((error) => {
