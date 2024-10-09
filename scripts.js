@@ -1534,21 +1534,6 @@ if (useCurrentLogic) {
     iniciarProximoNivel();
   });
 
-  /**
-   * Função para mudar o background do nível do jogo.
-   * @param {string} nivel - O background a ser aplicado.
-   */
-  function mudarNivel(nivel) {
-    document.body.className = ''; // Remove todas as classes do body
-    document.body.classList.add(nivel); // Adiciona a classe do nível atual
-  }
-
-  // Exemplo de uso:
-  mudarNivel('nivel-intro'); // Aplica o tema do nível introdutório
-  // mudarNivel('nivel-1'); // Aplica o tema do nível 1
-  // mudarNivel('nivel-2'); // Aplica o tema do nível 2
-}
-
 // FIM... Da Lógica de Nivel De Introdução_____________________________________________
 
 // Começa um Novo Nivel_______________________________________________________________
@@ -1777,6 +1762,21 @@ function iniciarProximoNivel() {
 // Caso o jogador queira fazer mais adição terá que assistir anuncio para monetizar
 // Após todos esses ajustes o jogo estrá completo  e pronto para ser publicado
 // E futuramente  posso adicionar mais recursos e melhorias
+
+  /**
+   * Função para mudar o background do nível do jogo.
+   * @param {string} nivel - O background a ser aplicado.
+   */
+  function mudarNivel(nivel) {
+    document.body.className = ''; // Remove todas as classes do body
+    document.body.classList.add(nivel); // Adiciona a classe do nível atual
+  }
+
+  // Exemplo de uso:
+  mudarNivel('nivel-intro'); // Aplica o tema do nível introdutório
+  // mudarNivel('nivel-1'); // Aplica o tema do nível 1
+  // mudarNivel('nivel-2'); // Aplica o tema do nível 2
+}
 
 // Função Para Otimizar o Desempenho no carregamento de imagens Lazy-Loading...
 document.addEventListener('DOMContentLoaded', function () {
