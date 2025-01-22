@@ -872,7 +872,7 @@ nivelAtual = 1;
 // Posiçoes de tubos de lógica base afetados pela lógica introdutória
 // Pois usa os mesmos elementos e precisei mudar a posição
 // Dos tubos no css Classe tubes
-const useCurrentLogic = true;
+const useCurrentLogic = false;
 
 if (useCurrentLogic) {
   // Lógica atual com 4 tubos
